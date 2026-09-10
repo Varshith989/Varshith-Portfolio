@@ -1,0 +1,1474 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: #050505;
+    background: #fafaf8;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+    --black: #050505;
+    --white: #ffffff;
+    --gray: #707070;
+    --light-gray: #f1f1ee;
+    --border: #dededb;
+    --page: #fafaf8;
+}
+
+
+/* =====================================================
+   PAGE BACKGROUND
+===================================================== */
+
+.page {
+    min-height: 100vh;
+
+    background-color: var(--page);
+
+    background-image:
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.065) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.065) 1px,
+            transparent 1px
+        );
+
+    background-size: 96px 96px;
+}
+
+
+/* =====================================================
+   CONTENT
+===================================================== */
+
+.content {
+    width: min(1200px, calc(100% - 48px));
+    margin: 0 auto;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    position: fixed;
+
+    top: 22px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 1000;
+
+    width: min(520px, calc(100% - 30px));
+
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 7px 10px 7px 8px;
+
+    background: rgba(255, 255, 255, 0.84);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid #d8d8d8;
+
+    border-radius: 50px;
+
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.08);
+}
+
+.nav-profile {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.avatar {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #e8e8e8;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.nav-name {
+    font-size: 16px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.dots {
+    display: flex;
+    gap: 7px;
+    margin-left: 18px;
+}
+
+.dots span {
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    background: #b3b4b9;
+}
+
+.dots span:first-child {
+    background: #222;
+}
+
+
+/* =====================================================
+   HERO
+   FIRST SCREEN
+===================================================== */
+
+.hero {
+    width: 100%;
+
+    height: 100vh;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.hero-laptop-only {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 90px 30px 30px;
+}
+
+
+/* =====================================================
+   LAPTOP
+===================================================== */
+
+.laptop {
+    position: relative;
+
+    width: min(760px, 85vw);
+
+    filter:
+        drop-shadow(
+            0 45px 40px rgba(0, 0, 0, 0.20)
+        );
+
+    transform:
+        perspective(1200px)
+        rotateY(-8deg)
+        rotateX(4deg);
+
+    animation:
+        laptopFloat 5s ease-in-out infinite;
+}
+
+.screen-shell {
+    width: 100%;
+
+    height: min(450px, 48vw);
+
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #737373,
+            #252525
+        );
+
+    border-radius:
+        17px 17px 6px 6px;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            #222,
+            #050505 70%
+        );
+
+    color: white;
+
+    border-radius: 4px;
+
+    overflow: hidden;
+
+    text-align: center;
+}
+
+.screen-text {
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size:
+        clamp(25px, 4vw, 52px);
+
+    line-height: 1.3;
+
+    letter-spacing: -0.05em;
+
+    animation:
+        screenTextFloat
+        4s ease-in-out
+        infinite alternate;
+}
+
+.keyboard-base {
+    width: 100%;
+    height: 55px;
+
+    position: relative;
+
+    background:
+        linear-gradient(
+            #777,
+            #a0a0a0
+        );
+
+    clip-path:
+        polygon(
+            4% 0,
+            96% 0,
+            100% 100%,
+            0 100%
+        );
+}
+
+.keyboard-base::after {
+    content: "";
+
+    position: absolute;
+
+    width: 31%;
+    height: 13px;
+
+    left: 34.5%;
+    bottom: 8px;
+
+    border-radius: 5px;
+
+    background: #666;
+}
+
+
+/* =====================================================
+   LAPTOP ANIMATION
+===================================================== */
+
+@keyframes laptopFloat {
+
+    0% {
+        transform:
+            perspective(1200px)
+            rotateY(-8deg)
+            rotateX(4deg)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            perspective(1200px)
+            rotateY(-8deg)
+            rotateX(4deg)
+            translateY(-12px);
+    }
+
+    100% {
+        transform:
+            perspective(1200px)
+            rotateY(-8deg)
+            rotateX(4deg)
+            translateY(0);
+    }
+}
+
+@keyframes screenTextFloat {
+
+    from {
+        transform: translateY(8px);
+    }
+
+    to {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+section {
+    padding: 150px 0;
+}
+
+.section-label {
+    margin-bottom: 25px;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 12px;
+
+    color: #777;
+}
+
+.section-title {
+    font-size:
+        clamp(48px, 7vw, 92px);
+
+    line-height: 0.95;
+
+    letter-spacing: -0.065em;
+
+    font-weight: 600;
+}
+
+.section-title span {
+    color: #999;
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-text {
+    max-width: 700px;
+
+    margin-top: 35px;
+
+    color: #666;
+
+    font-size: 20px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   PROJECT HEADER
+===================================================== */
+
+.projects-header {
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+.projects-description {
+    max-width: 420px;
+
+    color: #666;
+
+    font-size: 16px;
+
+    line-height: 1.65;
+}
+
+
+/* =====================================================
+   PROJECT GRID
+===================================================== */
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+
+    margin-top: 75px;
+}
+
+
+/* =====================================================
+   PROJECT CARD
+===================================================== */
+
+.project-card {
+    overflow: hidden;
+
+    background: #fff;
+
+    border: 1px solid #ddd;
+
+    border-radius: 24px;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.project-card:hover {
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =====================================================
+   PROJECT IMAGE
+===================================================== */
+
+.project-image {
+    display: block;
+
+    position: relative;
+
+    width: 100%;
+    height: 330px;
+
+    overflow: hidden;
+
+    background: #111;
+
+    cursor: pointer;
+}
+
+.project-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #050505,
+            #383838
+        );
+
+    color: #fff;
+
+    font-size:
+        clamp(28px, 4vw, 48px);
+
+    line-height: 1;
+
+    font-weight: 600;
+
+    letter-spacing: -0.07em;
+
+    transition:
+        transform 0.5s ease;
+}
+
+.weather-project {
+    background:
+        linear-gradient(
+            135deg,
+            #0b0b0b,
+            #555
+        );
+}
+
+.project-card:hover
+.project-placeholder {
+    transform: scale(1.04);
+}
+
+.project-image-link {
+    position: absolute;
+
+    left: 50%;
+    bottom: 22px;
+
+    transform:
+        translate(-50%, 15px);
+
+    padding:
+        11px 17px;
+
+    border-radius: 100px;
+
+    background:
+        rgba(255, 255, 255, 0.95);
+
+    color: #050505;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+
+    z-index: 2;
+}
+
+.project-image:hover
+.project-image-link {
+    opacity: 1;
+
+    transform:
+        translate(-50%, 0);
+}
+
+
+/* =====================================================
+   PROJECT INFORMATION
+===================================================== */
+
+.project-info {
+    padding: 28px;
+}
+
+.project-top {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.project-title {
+    font-size: 26px;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.04em;
+
+    font-weight: 600;
+}
+
+.project-arrow {
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #f0f0ed;
+
+    font-size: 20px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.project-arrow:hover {
+    transform:
+        rotate(8deg)
+        scale(1.08);
+
+    background: #e2e2df;
+}
+
+.project-info > p {
+    margin-top: 16px;
+
+    color: #707070;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   PROJECT TAGS
+===================================================== */
+
+.tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 22px;
+}
+
+.tag {
+    padding:
+        7px 11px;
+
+    border-radius: 100px;
+
+    background: #f0f0ed;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 10px;
+
+    color: #444;
+}
+
+
+/* =====================================================
+   SKILLS / LIST
+===================================================== */
+
+.category-list {
+    margin-top: 70px;
+
+    border-top:
+        1px solid var(--border);
+}
+
+.category {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    padding:
+        28px 0;
+
+    border-bottom:
+        1px solid var(--border);
+
+    transition:
+        padding-left 0.3s ease;
+}
+
+.category:hover {
+    padding-left: 18px;
+}
+
+.category-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #050505;
+
+    color: #fff;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 15px;
+
+    font-weight: 700;
+}
+
+.category-name {
+    font-size:
+        clamp(24px, 3vw, 38px);
+
+    font-weight: 500;
+
+    letter-spacing: -0.04em;
+}
+
+.category-arrow {
+    margin-left: auto;
+
+    font-size: 25px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+.category:hover
+.category-arrow {
+    transform:
+        translateX(6px);
+}
+
+
+/* =====================================================
+   EDUCATION
+===================================================== */
+
+.process {
+    background: #f1f1ee;
+
+    border-top:
+        1px solid #ddd;
+
+    border-bottom:
+        1px solid #ddd;
+}
+
+.process-grid {
+    margin-top: 75px;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 40px;
+}
+
+.process-item {
+    padding-top: 25px;
+
+    border-top:
+        1px solid #aaa;
+}
+
+.process-number {
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 12px;
+
+    color: #999;
+}
+
+.process-item h3 {
+    margin-top: 45px;
+
+    font-size: 38px;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.045em;
+
+    font-weight: 600;
+}
+
+.process-item p {
+    margin-top: 15px;
+
+    font-size: 18px;
+
+    color: #666;
+}
+
+
+/* =====================================================
+   FAQ
+===================================================== */
+
+.faq {
+    margin-top: 70px;
+}
+
+.faq-item {
+    margin-bottom: 12px;
+
+    overflow: hidden;
+
+    background: #fff;
+
+    border:
+        1px solid #ddd;
+
+    border-radius: 18px;
+}
+
+.faq-question {
+    width: 100%;
+
+    padding: 27px;
+
+    border: 0;
+
+    background: transparent;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+.faq-left {
+    display: flex;
+    align-items: center;
+}
+
+.faq-number {
+    margin-right: 20px;
+
+    color: #999;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 12px;
+}
+
+.faq-icon {
+    font-size: 24px;
+
+    font-weight: 400;
+}
+
+.faq-answer {
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition:
+        max-height 0.35s ease;
+}
+
+.faq-answer-inner {
+    max-width: 850px;
+
+    padding:
+        0 27px 28px;
+
+    color: #666;
+
+    font-size: 17px;
+
+    line-height: 1.65;
+}
+
+.faq-item.active
+.faq-answer {
+    max-height: 300px;
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact {
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        90px 60px;
+
+    background: #050505;
+
+    color: #fff;
+
+    border-radius: 35px;
+}
+
+.contact h2 {
+    max-width: 900px;
+
+    font-size:
+        clamp(60px, 9vw, 130px);
+
+    line-height: 0.85;
+
+    letter-spacing: -0.08em;
+
+    font-weight: 600;
+}
+
+.contact h2 span {
+    color: #777;
+}
+
+.contact-text {
+    max-width: 550px;
+
+    margin-top: 35px;
+
+    color: #aaa;
+
+    font-size: 18px;
+
+    line-height: 1.6;
+}
+
+.contact-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 35px;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.primary-btn,
+.secondary-btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding:
+        15px 22px;
+
+    border-radius: 100px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.primary-btn {
+    background: #050505;
+
+    color: #fff;
+}
+
+.secondary-btn {
+    background: #fff;
+
+    color: #050505;
+
+    border:
+        1px solid #d7d7d7;
+}
+
+.primary-btn:hover,
+.secondary-btn:hover {
+    transform:
+        translateY(-3px);
+}
+
+.contact .primary-btn {
+    background: #fff;
+
+    color: #050505;
+}
+
+.contact .secondary-btn {
+    background: transparent;
+
+    color: #fff;
+
+    border-color: #444;
+}
+
+.contact .secondary-btn:hover {
+    background: #fff;
+
+    color: #050505;
+
+    border-color: #fff;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    padding:
+        70px 0 140px;
+}
+
+.footer-grid {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 40px;
+
+    padding-top: 30px;
+
+    border-top:
+        1px solid #ddd;
+}
+
+.footer-name {
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+.footer-links {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 30px;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    color: #000;
+}
+
+.copyright {
+    margin-top: 50px;
+
+    color: #999;
+
+    font-family:
+        "Space Mono",
+        monospace;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   FLOATING BUTTONS
+===================================================== */
+
+.floating-cta {
+    position: fixed;
+
+    left: 50%;
+    bottom: 22px;
+
+    transform:
+        translateX(-50%);
+
+    z-index: 999;
+
+    display: flex;
+
+    gap: 5px;
+
+    padding: 6px;
+
+    background:
+        rgba(255, 255, 255, 0.92);
+
+    backdrop-filter:
+        blur(18px);
+
+    border:
+        1px solid #d6d6d6;
+
+    border-radius: 100px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.17);
+}
+
+.floating-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        14px 22px;
+
+    border-radius: 100px;
+
+    background: #fff;
+
+    color: #050505;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.floating-btn.black {
+    background: #050505;
+
+    color: #fff;
+}
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+    .content {
+        width:
+            min(
+                calc(100% - 40px),
+                900px
+            );
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 800px) {
+
+    .page {
+        background-size:
+            48px 48px;
+    }
+
+
+    .content {
+        width:
+            calc(100% - 34px);
+    }
+
+
+    /* NAVBAR */
+
+    .navbar {
+        top: 12px;
+
+        height: 58px;
+
+        width:
+            calc(100% - 28px);
+    }
+
+    .avatar {
+        width: 44px;
+        height: 44px;
+    }
+
+    .nav-name {
+        font-size: 14px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        height: 100svh;
+        min-height: 100svh;
+    }
+
+    .hero-laptop-only {
+        padding:
+            70px 18px 30px;
+    }
+
+    .laptop {
+        width: 92vw;
+    }
+
+    .screen-shell {
+        height: 55vw;
+
+        padding: 10px;
+
+        border-radius: 11px;
+    }
+
+    .screen-text {
+        font-size: 21px;
+    }
+
+    .keyboard-base {
+        height: 34px;
+    }
+
+    .keyboard-base::after {
+        height: 8px;
+        bottom: 6px;
+    }
+
+
+    /* SECTIONS */
+
+    section {
+        padding:
+            95px 0;
+    }
+
+    .section-title {
+        font-size: 57px;
+    }
+
+
+    /* PROJECTS */
+
+    .projects-header {
+        display: block;
+    }
+
+    .projects-description {
+        margin-top: 25px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+
+        margin-top: 55px;
+    }
+
+    .project-image {
+        height: 270px;
+    }
+
+    .project-title {
+        font-size: 23px;
+    }
+
+    .project-info {
+        padding: 23px;
+    }
+
+
+    /* SKILLS */
+
+    .category {
+        gap: 18px;
+
+        padding:
+            24px 0;
+    }
+
+    .category-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .category-name {
+        font-size: 25px;
+    }
+
+
+    /* EDUCATION */
+
+    .process-item h3 {
+        font-size: 30px;
+
+        line-height: 1.1;
+    }
+
+
+    /* CONTACT */
+
+    .contact {
+        padding:
+            60px 25px;
+
+        border-radius: 25px;
+    }
+
+    .contact h2 {
+        font-size: 65px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-grid {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        gap: 20px;
+    }
+
+
+    /* FLOATING BUTTONS */
+
+    .floating-cta {
+        width:
+            calc(100% - 28px);
+
+        justify-content: center;
+    }
+
+    .floating-btn {
+        flex: 1;
+
+        padding:
+            13px 10px;
+
+        font-size: 12px;
+    }
+
+
+    /* PROJECT HOVER BUTTON */
+
+    .project-image-link {
+        display: none;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 430px) {
+
+    .screen-text {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 51px;
+    }
+
+    .category-name {
+        font-size: 22px;
+    }
+
+    .contact h2 {
+        font-size: 54px;
+    }
+
+    .project-image {
+        height: 240px;
+    }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        scroll-behavior:
+            auto !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+
+}

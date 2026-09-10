@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FLOW — Ambient Focus Timer</title>
+<meta name="description" content="FLOW is an ambient focus timer with generative atmosphere, session journaling, and weekly stats. Built with vanilla HTML, CSS, and JavaScript." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='42' fill='%23ff5e3a'/%3E%3Ccircle cx='50' cy='50' r='26' fill='%230b0d10'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<canvas id="embers" aria-hidden="true"></canvas>
+
+<main class="app">
+  <header class="app-head">
+    <p class="brand">FLOW<span class="brand-dot"></span></p>
+    <p class="session-label" id="sessionLabel">Focus session</p>
+  </header>
+
+  <section class="timer-card" aria-label="Timer">
+    <div class="ring-wrap">
+      <svg class="ring" viewBox="0 0 260 260" role="presentation">
+        <circle class="ring-track" cx="130" cy="130" r="120"></circle>
+        <circle class="ring-progress" id="ringProgress" cx="130" cy="130" r="120"></circle>
+      </svg>
+      <div class="time-block">
+        <p class="time" id="timeDisplay" aria-hidden="true">25:00</p>
+        <p class="time-note" id="timeNote">ready</p>
+      </div>
+    </div>
+    <p class="sr-only" id="ariaStatus" role="status"></p>
+  </section>
+
+  <section class="controls" aria-label="Timer controls">
+    <div class="presets" role="group" aria-label="Session presets">
+      <button type="button" class="preset is-active" data-min="25" data-kind="Focus session">Focus<span>25</span></button>
+      <button type="button" class="preset" data-min="5" data-kind="Short break">Short<span>5</span></button>
+      <button type="button" class="preset" data-min="15" data-kind="Long break">Long<span>15</span></button>
+      <label class="preset custom-preset">
+        <span>Custom</span>
+        <input type="number" id="customMin" min="1" max="120" value="45" aria-label="Custom minutes" />
+      </label>
+    </div>
+    <div class="main-controls">
+      <button type="button" class="btn btn-start" id="startBtn">Start</button>
+      <button type="button" class="btn btn-ghost" id="resetBtn">Reset</button>
+    </div>
+    <p class="flow-line" id="flowLine">Pick a length and press start</p>
+  </section>
+
+  <section class="stats" aria-label="This week's focus">
+    <div class="stats-head">
+      <h2 class="stats-title" id="weekLabel">This week</h2>
+      <p class="stats-total" id="weekTotal">0 min focused</p>
+    </div>
+    <div class="week-bars" id="weekBars" role="img" aria-label="Focus minutes by weekday"></div>
+  </section>
+
+  <footer class="app-foot">
+    <p>Vanilla HTML · CSS · JS — no frameworks, no build step</p>
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
