@@ -780,3 +780,38 @@ function initWordmarkLetterPhysics() {
         wordmark.appendChild(span);
     }
 }
+
+
+/* =====================================================
+   DIRECT BOTTOM BUTTON & MENU CLICK HANDLERS
+===================================================== */
+document.addEventListener("DOMContentLoaded", function () {
+    initBottomMenuHandlers();
+});
+
+function initBottomMenuHandlers() {
+    var menuLabel = document.getElementById("footerMenuLabel");
+    if (menuLabel) {
+        menuLabel.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    }
+
+    var footerLinks = document.querySelectorAll(".footer__menu-links a, .footer-links a");
+    footerLinks.forEach(function (link) {
+        link.addEventListener("click", function (e) {
+            var href = link.getAttribute("href");
+            if (href && href.startsWith("#")) {
+                e.preventDefault();
+                if (href === "#top") {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                } else {
+                    var target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }
+                }
+            }
+        });
+    });
+}
