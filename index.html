@@ -57,7 +57,6 @@
             "Tailwind CSS",
             "Node.js",
             "Express.js",
-            "AWS",
             "REST APIs",
             "MongoDB"
         ]
@@ -67,7 +66,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Antonio:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap"
         rel="stylesheet"
     >
     <link rel="stylesheet" href="style.css">
@@ -75,6 +74,8 @@
 </head>
 
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
 
     <a class="skip-link" href="#main">Skip to content</a>
 
@@ -91,7 +92,6 @@
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
-                <a href="#experience">Experience</a>
                 <a href="#contact">Contact</a>
             </div>
 
@@ -116,7 +116,6 @@
         <!-- ================= MOBILE MENU ================= -->
         <div class="mobile-menu" id="mobileMenu">
             <a href="#about">About</a>
-            <a href="#experience">Experience</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
             <a href="#education">Education</a>
@@ -156,21 +155,54 @@
                 </ul>
             </div>
 
-            <div class="hero-visual" aria-hidden="true">
-                <div class="laptop">
+            <div class="hero-visual" id="heroVisual" aria-hidden="true">
+                <!-- Floating Badges with 3D Depth -->
+                <div class="laptop-floating-badge badge-top-right">
+                    <span class="badge-icon">⚡</span>
+                    <span>Full-Stack &amp; AI</span>
+                </div>
+                <div class="laptop-floating-badge badge-bottom-left">
+                    <span class="status-pulse"></span>
+                    <span>Available for Hire</span>
+                </div>
+
+                <div class="laptop" id="heroLaptop">
                     <div class="screen-shell">
+                        <div class="camera-dot"></div>
                         <div class="screen">
-                            <div class="screen-text">
-                                HELLO.
-                                <br><br>
-                                I'M VARSHITH.
-                                <br><br>
-                                LET'S BUILD.
- 
+                            <!-- macOS Editor Header -->
+                            <div class="editor-header">
+                                <div class="editor-dots">
+                                    <span class="dot-red"></span>
+                                    <span class="dot-yellow"></span>
+                                    <span class="dot-green"></span>
+                                </div>
+                                <div class="editor-tab">
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                    <span>varshith.ts</span>
+                                </div>
+                                <div class="editor-status"><span class="live-indicator"></span> Live</div>
                             </div>
+                            <!-- Code Content -->
+                            <div class="editor-body" id="editorCodeBody">
+                                <div class="code-line"><span class="syntax-keyword">const</span> <span class="syntax-var">developer</span> = {</div>
+                                <div class="code-line indent"><span class="syntax-key">name</span>: <span class="syntax-str">"Varshith Reddy"</span>,</div>
+                                <div class="code-line indent"><span class="syntax-key">role</span>: <span class="syntax-str">"Software Developer"</span>,</div>
+                                <div class="code-line indent"><span class="syntax-key">stack</span>: [<span class="syntax-str">"React"</span>, <span class="syntax-str">"TypeScript"</span>],</div>
+                                <div class="code-line indent"><span class="syntax-key">focus</span>: <span class="syntax-accent">"Building high-impact software"</span>,</div>
+                                <div class="code-line indent"><span class="syntax-key">status</span>: <span class="syntax-accent">"Ready to contribute"</span></div>
+                                <div class="code-line">};</div>
+                                <div class="code-line terminal-prompt"><span class="syntax-prompt">&gt;</span> <span class="syntax-active-cmd" id="terminalCmd">ready_to_ship</span><span class="typing-cursor"></span></div>
+                                <div class="code-line terminal-output" id="terminalOutput">✓ Compiled successfully in 14ms</div>
+                            </div>
+                            <div class="screen-glare"></div>
                         </div>
                     </div>
-                    <div class="keyboard-base"></div>
+                    <div class="laptop-hinge"></div>
+                    <div class="keyboard-base">
+                        <div class="trackpad-notch"></div>
+                    </div>
+                    <div class="laptop-reflection"></div>
                 </div>
             </div>
         </header>
@@ -190,16 +222,14 @@
                     <p class="about-text reveal">
                         I'm Varshith Reddy, a frontend and software developer from Hyderabad, India —
                         a 2025 Electronics &amp; Communication Engineering graduate from CMR Institute
-                        of Technology with hands-on experience in AWS, Python, ServiceNow,and Salesforce
-                        through internships and projects.
+                        of Technology.
 
                         <br><br>
-                        I specialize in React, TypeScript, JavaScript,and Tailwind CSS for the frontend,
-                        and I build full-stack solutions with Python, Node.js, Express.js,and REST APIs.
- 
-                        I'm currently seeking internship and entry-level opportunities in frontend development,
-                        SDE,and SDET roles where I can contribute to production-grade applications.
- 
+                        I specialize in React, TypeScript, JavaScript, and Tailwind CSS for the frontend,
+                        and I build full-stack solutions with Node.js, Express.js, and REST APIs.
+
+                        I'm currently seeking internship and entry-level opportunities in frontend development
+                        and SDE roles where I can contribute to production-grade applications.
                     </p>
  
                     <ul class="about-facts reveal" aria-label="Quick facts">
@@ -210,85 +240,12 @@
                 </div>
             </section>
  
-            <!-- ================= EXPERIENCE ================= -->
-            <section id="experience" aria-labelledby="experience-title">
-                <div class="content">
-                    <div class="section-label">02 — EXPERIENCE</div>
- 
-                    <h2 class="section-title reveal" id="experience-title">
-                        Where I've
-                        <span>worked.</span>
-                    </h2>
- 
-                    <div class="experience-grid">
-                        <article class="experience-item reveal">
-                            <div class="experience-meta">
-                                <span class="process-number">Jan 2025 — Feb 2025</span>
-                                <span class="experience-type">Cloud Workshop</span>
-                            </div>
-                            <h3>AWS Cloud Workshop — Hyderabad</h3>
-                            <p>
-                                Deployed applications using EC2, S3, RDS, IAM,and VPC,following best
-                                practices for scalability. Designed basic cloud architectures and managed resources
-                                using the AWS CLI.
-
- 
-                            </p>
-                            <div class="tags">
-                                <span class="tag">AWS</span>
-                                <span class="tag">EC2</span>
-                                <span class="tag">S3</span>
-                                <span class="tag">RDS</span>
-                                <span class="tag">IAM</span>
-                                <span class="tag">VPC</span>
-                            </div>
-                        </article>
- 
-                        <article class="experience-item reveal">
-                            <div class="experience-meta">
-                                <span class="process-number">Aug 2023 — Oct 2023</span>
-                                <span class="experience-type">Python Internship</span>
-                            </div>
-                            <h3>Python Intern — Edugene Technologies</h3>
-                            <p>
-                                Gained hands-on Python development experience by completing practical development
-                                tasks and strengthening problem-solving skills in a professional software
-                                environment.
- 
- 
-                            </p>
-                            <div class="tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">Software Development</span>
-                            </div>
-                        </article>
- 
-                        <article class="experience-item reveal">
-                            <div class="experience-meta">
-                                <span class="process-number">Jul 2022</span>
-                                <span class="experience-type">Virtual Job Simulation</span>
-                            </div>
-                            <h3>Goldman Sachs — SWE Simulation (Forage)</h3>
-                            <p>
-                                Completed a virtual software engineering job simulation, performing practical
-                                tasks based on real-world business scenarios and gaining exposure to industry software
-                                development workflows.
- 
- 
-                            </p>
-                            <div class="tags">
-                                <span class="tag">Software Engineering</span>
-                                <span class="tag">Problem Solving</span>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section><!-- ================= PROJECTS ================= -->
+            <!-- ================= PROJECTS ================= -->
             <section id="projects" aria-labelledby="projects-title">
                 <div class="content">
                     <div class="projects-header">
                         <div>
-                            <div class="section-label">03 — SELECTED PROJECTS</div>
+                            <div class="section-label">02 — SELECTED PROJECTS</div>
                             <h2 class="section-title reveal" id="projects-title">
                                 Things I've
                                 <span>built.</span>
@@ -439,136 +396,13 @@
                             </div>
                         </article>
  
-                        <!-- PROJECT 3: TO-DO LIST -->
-                        <article class="project-card reveal">
-                            <a
-                                href="https://github.com/Varshith989/To-do-list"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="project-image"
-                                aria-label="To-do List — source code on GitHub (opens in new tab)"
-                            >
-                                <div class="project-placeholder placeholder-todo">
-                                    <span>TO-DO</span>
-                                    <span>LIST</span>
-                                </div>
-                                <div class="project-image-link">VIEW PROJECT ↗</div>
-                            </a>
- 
-                            <div class="project-info">
-                                <div class="project-top">
-                                    <h3 class="project-title">To-do List</h3>
-                                    <a
-                                        href="https://github.com/Varshith989/To-do-list"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        class="project-arrow"
-                                        aria-label="To-do List — GitHub repository"
-                                    >↗</a>
-                                </div>
- 
-                                <p>
-                                    Full-stack cross-platform todo application — a React Native client with a
-                                    TypeScript backend (Express + MongoDB)and JWT authentication.
- 
- 
-                                </p>
- 
-                                <ul class="project-features">
-                                    <li>Register/login with JWT</li>
-                                    <li>Create, complete &amp; delete tasks</li>
-                                    <li>MongoDB persistence</li>
-                                    <li>TypeScript across the stack</li>
-                                </ul>
- 
-                                <div class="tags">
-                                    <span class="tag">React Native</span>
-                                    <span class="tag">TypeScript</span>
-                                    <span class="tag">Express</span>
-                                    <span class="tag">MongoDB</span>
-                                    <span class="tag">JWT Auth</span>
-                                </div>
- 
-                                <div class="project-links">
-                                    <a
-                                        href="https://github.com/Varshith989/To-do-list"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        class="project-link"
-                                    >GitHub ↗</a>
-                                </div>
-                            </div>
-                        </article>
- 
-                        <!-- PROJECT 4: POWER BI DASHBOARD -->
-                        <article class="project-card reveal">
-                            <a
-                                href="https://github.com/Varshith989/Powerbi-sales-dashboard"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="project-image"
-                                aria-label="Power BI Sales Dashboard — source code on GitHub (opens in new tab)"
-                            >
-                                <img
-                                    class="project-photo"
-                                    src="assets/projects/powerbi-dashboard.png"
-                                    alt="Screenshot of the Power BI sales dashboard"
-                                >
-                                <div class="project-image-link">VIEW PROJECT ↗</div>
-                            </a>
- 
-                            <div class="project-info">
-                                <div class="project-top">
-                                    <h3 class="project-title">Power BI Sales Dashboard</h3>
-                                    <a
-                                        href="https://github.com/Varshith989/Powerbi-sales-dashboard"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        class="project-arrow"
-                                        aria-label="Power BI Sales Dashboard — GitHub repository"
-                                    >↗</a>
-                                </div>
- 
-                                <p>
-                                    Interactive sales analytics dashboard covering monthly and yearly trends,
-                                    country-wise performance,and salesperson contributions — modeled with
-                                    Power Query,and DAX.
- 
- 
-                                </p>
- 
-                                <ul class="project-features">
-                                    <li>Monthly &amp; yearly sales trends</li>
-                                    <li>Country-wise performance</li>
-                                    <li>Salesperson contributions</li>
-                                    <li>Power Query &amp; DAX modeling</li>
-                                </ul>
- 
-                                <div class="tags">
-                                    <span class="tag">Power BI</span>
-                                    <span class="tag">DAX</span>
-                                    <span class="tag">Power Query</span>
-                                    <span class="tag">Data Modeling</span>
-                                </div>
- 
-                                <div class="project-links">
-                                    <a
-                                        href="https://github.com/Varshith989/Powerbi-sales-dashboard"
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        class="project-link"
-                                    >GitHub ↗</a>
-                                </div>
-                            </div>
-                        </article>
- 
-                    </div>
+                        </div>
                 </div>
             </section>
 <!-- ================= TECH STACK ================= -->
             <section id="skills" aria-labelledby="skills-title">
                 <div class="content">
-                    <div class="section-label">04 — TECH STACK</div>
+                    <div class="section-label">03 — TECH STACK</div>
 
                     <h2 class="section-title reveal" id="skills-title">
                         Technologies I
@@ -613,18 +447,6 @@
                             <div class="category-name">REST APIs</div>
                         </div>
                         <div class="category">
-                            <div class="category-icon">AW</div>
-                            <div class="category-name">AWS (EC2, S3, RDS, IAM, Lambda)</div>
-                        </div>
-                        <div class="category">
-                            <div class="category-icon">SN</div>
-                            <div class="category-name">ServiceNow &amp; Salesforce</div>
-                        </div>
-                        <div class="category">
-                            <div class="category-icon">PB</div>
-                            <div class="category-name">Power BI &amp; Data Analytics</div>
-                        </div>
-                        <div class="category">
                             <div class="category-icon">GH</div>
                             <div class="category-name">Git &amp; GitHub</div>
                         </div>
@@ -635,7 +457,7 @@
             <!-- ================= EDUCATION ================= -->
             <section id="education" class="process" aria-labelledby="education-title">
                 <div class="content">
-                    <div class="section-label">05 — EDUCATION</div>
+                    <div class="section-label">04 — EDUCATION</div>
 
                     <h2 class="section-title reveal" id="education-title">
                         Where I
@@ -648,23 +470,13 @@
                             <h3>CMR Institute of Technology, Hyderabad</h3>
                             <p>B.Tech — Electronics &amp; Communication Engineering · CGPA: 6.82</p>
                         </div>
-                        <div class="process-item reveal">
-                            <span class="process-number">2019 — 2021</span>
-                            <h3>SV Junior College</h3>
-                            <p>Intermediate (MPC) · 85%</p>
                         </div>
-                        <div class="process-item reveal">
-                            <span class="process-number">2019</span>
-                            <h3>St. Anthony's High School</h3>
-                            <p>SSC · GPA: 9.7</p>
-                        </div>
-                    </div>
                 </div>
             </section>
 <!-- ================= CONNECT ================= -->
             <section id="connect" aria-labelledby="connect-title">
                 <div class="content">
-                    <div class="section-label">06 — CONNECT</div>
+                    <div class="section-label">05 — CONNECT</div>
 
                     <h2 class="section-title reveal" id="connect-title">
                         Find me
@@ -672,6 +484,17 @@
                     </h2>
 
                     <div class="category-list reveal">
+                        <a
+                            class="category"
+                            href="https://x.com/VarshithRe35628"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <div class="category-icon">𝕏</div>
+                            <div class="category-name">X (Twitter)</div>
+                            <div class="category-arrow">↗</div>
+                        </a>
+
                         <a
                             class="category"
                             href="https://www.linkedin.com/in/varshith-reddy-b2914b23a/"
@@ -720,7 +543,7 @@
             <!-- ================= FAQ ================= -->
             <section id="faq" aria-labelledby="faq-title">
                 <div class="content">
-                    <div class="section-label">07 — FAQ</div>
+                    <div class="section-label">06 — FAQ</div>
 
                     <h2 class="section-title reveal" id="faq-title">
                         A few
@@ -759,11 +582,7 @@
                             <div class="faq-answer" id="faq-answer-2">
                                 <div class="faq-answer-inner">
                                     React, TypeScript, JavaScript (ES6+), Tailwind CSS, HTML5/CSS3, Python,
-                                    Node.js, Express.js,MongoDB,AWS,REST APIs,Git,and GitHub.
-
-
-
-
+                                    Node.js, Express.js, MongoDB, REST APIs, Git, and GitHub.
                                 </div>
                             </div>
                         </div>
@@ -790,102 +609,132 @@
                 </div>
             </section>
 
-            <!-- ================= CONTACT ================= -->
-            <section id="contact" aria-labelledby="contact-title">
-                <div class="content">
-                    <div class="contact reveal">
-                        <div class="section-label">08 — CONTACT</div>
+            <!-- ================= BOTTOM CONTACT & FOOTER SECTION (INSPIRED BY SIDFZ) ================= -->
+    <footer class="footer" id="contact">
+        <!-- Canvas for interactive ambient glow/particles/drawing -->
+        <canvas class="footer__cursor-canvas" id="footerCanvas" aria-hidden="true"></canvas>
 
-                        <h2 id="contact-title">
-                            Let's build
-                            <span>something.</span>
-                        </h2>
+        <div class="footer__top">
+            <!-- Headline with animated word cycle and SVG scribble -->
+            <div class="footer__headline">
+                <div class="footer__headline-top">
+                    <h2 class="footer__sub footer__sub--cycle-line">
+                        <span>Let's </span>
+                        <span class="footer__cycle-wrapper">
+                            <span class="footer__cycle" aria-label="design build create">
+                                <span class="footer__cycle-word footer__cycle-word--design">design</span>
+                                <span class="footer__cycle-word footer__cycle-word--build">build</span>
+                                <span class="footer__cycle-word footer__cycle-word--create">create</span>
+                            </span>
+                            <svg class="footer__scribble-svg" viewBox="0 0 240 70" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <path class="footer__scribble-path" d="M8,46 C48,60 178,62 216,43 C230,37 220,16 170,12 C112,8 20,22 12,35 C4,48 58,62 150,56 C192,53 222,42 208,30" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </h2>
+                </div>
+                <p class="footer__sub footer__sub--muted">something great.</p>
+            </div>
 
-                        <p class="contact-text">
-                            Interested in working together, discussing an opportunity, or simply connecting?
-                            Reach out on LinkedIn or drop me an email.
+            <!-- Contact Row: Socials / Location & Status -->
+            <div class="footer__contact-row">
+                <div class="footer__contact-col">
+                    <span class="footer__label">Socials</span>
+                    <div class="footer__socials">
+                        <a href="https://x.com/VarshithRe35628" target="_blank" rel="noopener noreferrer" class="footer__social-pill" aria-label="X">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                            <span>X</span>
+                        </a>
 
+                        <a href="https://www.linkedin.com/in/varshith-reddy-b2914b23a/" target="_blank" rel="noopener noreferrer" class="footer__social-pill" aria-label="LinkedIn">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.68 1.68 0 1 0 0-3.36 1.68 1.68 0 0 0 0 3.36m1.4 9.74v-8.37H5.06v8.37h2.8z"/>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
 
+                        <a href="https://github.com/Varshith989" target="_blank" rel="noopener noreferrer" class="footer__social-btn" aria-label="GitHub">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                            </svg>
+                        </a>
 
-
-                        </p>
-
-                        <div class="contact-buttons">
-                            <a
-                                href="https://www.linkedin.com/in/varshith-reddy-b2914b23a/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="primary-btn"
-                            >LinkedIn ↗</a>
-
-                            <a
-                                href="https://github.com/Varshith989"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="secondary-btn"
-                            >GitHub ↗</a>
-
-                            <a
-                                href="mailto:reddyvarshith122@gmail.com"
-                                class="secondary-btn"
-                            >Email</a>
-
-                            <a
-                                href="resume.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="secondary-btn"
-                            >Resume ↓</a>
-                        </div>
+                        <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="footer__social-pill" aria-label="Resume">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+                            </svg>
+                            <span>Resume</span>
+                        </a>
                     </div>
                 </div>
-            </section>
 
-        </main>
+                <div class="footer__contact-col">
+                    <span class="footer__label">Location &amp; Status</span>
+                    <span class="footer__link" style="color: #bbb; font-size: 16px;">
+                        Hyderabad, India · <strong style="color: #4ade80;">Open to roles</strong>
+                    </span>
+                </div>
+            </div>
 
-        <!-- ================= FOOTER ================= -->
-        <footer>
-            <div class="content">
-                <div class="footer-grid">
-                    <div class="footer-name">Varshith Reddy.</div>
+            <!-- Subtle Divider -->
+            <div class="footer__divider"></div>
 
-                    <div class="footer-links">
+            <!-- Bottom Row: Menu Links + Status + Copyright -->
+            <div class="footer__bottom-row">
+                <div class="footer__menu-col">
+                    <span class="footer__label">Menu</span>
+                    <div class="footer__menu-links">
                         <a href="#about">About</a>
                         <a href="#projects">Projects</a>
                         <a href="#skills">Tech Stack</a>
-                        <a href="#experience">Experience</a>
                         <a href="#education">Education</a>
                         <a href="#connect">Connect</a>
+                        <a href="#faq">FAQ</a>
                         <a href="#contact">Contact</a>
                     </div>
                 </div>
 
-                <div class="copyright">
-                    © <span class="year">2026</span> Varshith Reddy. Built with HTML, CSS &amp; JavaScript —
-                    no frameworks, no trackers.
+                <div class="footer__menu-col">
+                    <span class="footer__label">Role Target</span>
+                    <div class="footer__menu-links--col">
+                        <span style="color:#aaa; font-size:14px; line-height: 1.5;">
+                            Frontend &amp; Software Development Engineer (SDE)
+                        </span>
+                    </div>
+                </div>
+
+                <div class="footer__copy">
+                    © <span class="year">2026</span> Varshith Reddy.<br>All rights reserved.
                 </div>
             </div>
-        </footer>
-
-        <!-- ================= FLOATING CTA ================= -->
-        <div class="floating-cta">
-            <a
-                class="floating-btn black"
-                href="https://www.linkedin.com/in/varshith-reddy-b2914b23a/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >LinkedIn ↗</a>
-
-            <a
-                class="floating-btn"
-                href="resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-            >Resume ↓</a>
         </div>
 
+        <!-- GIANT ARCHITECTURAL WORDMARK (PERFECTLY VISIBLE & FIT) -->
+        <div class="footer__wordmark-container">
+            <div class="footer__wordmark">VARSHITH REDDY</div>
+        </div>
+    </footer>
+
+    <!-- ================= FLOATING CTA ================= -->
+    <div class="floating-cta">
+        <a
+            class="floating-btn black"
+            href="https://www.linkedin.com/in/varshith-reddy-b2914b23a/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >LinkedIn ↗</a>
+
+        <a
+            class="floating-btn"
+            href="resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+        >Resume ↓</a>
     </div>
 
-    <script src="script.js"></script>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
