@@ -1938,3 +1938,177 @@ body:hover .ambient-glow-follower {
 .footer__label.clickable:hover {
     color: #ffffff !important;
 }
+
+
+/* =====================================================
+   TYPOGRAPHY & READABILITY ENHANCEMENTS
+===================================================== */
+
+/* 1. Navbar */
+.nav-links a {
+    font-size: 15px !important;
+    padding: 9px 16px !important;
+}
+
+.nav-name {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+}
+
+/* 2. Hero Section Typography */
+.hero-eyebrow {
+    font-size: 15px !important;
+    letter-spacing: 0.12em !important;
+    font-weight: 600 !important;
+}
+
+.hero-role {
+    font-size: clamp(20px, 2.5vw, 25px) !important;
+    font-weight: 600 !important;
+    color: #0f172a !important;
+    margin-top: 6px !important;
+    margin-bottom: 12px !important;
+}
+
+.hero-sub {
+    font-size: clamp(16px, 1.8vw, 18px) !important;
+    line-height: 1.65 !important;
+    color: #334155 !important;
+    max-width: 520px !important;
+}
+
+.hero-status {
+    font-size: 15px !important;
+    padding: 8px 16px !important;
+    font-weight: 500 !important;
+}
+
+.hero-chips li {
+    font-size: 14px !important;
+    padding: 8px 16px !important;
+    font-weight: 500 !important;
+}
+
+.primary-btn, .secondary-btn {
+    font-size: 15px !important;
+    padding: 12px 26px !important;
+}
+
+/* 3. MacBook Pro Laptop & Code Editor Screen */
+.laptop {
+    width: min(560px, 94vw) !important;
+}
+
+.screen-shell {
+    height: min(360px, 60vw) !important;
+}
+
+.editor-header {
+    height: 36px !important;
+    padding: 0 16px !important;
+}
+
+.editor-tab {
+    font-size: 12px !important;
+    padding: 4px 14px !important;
+}
+
+.editor-status {
+    font-size: 12px !important;
+}
+
+.editor-body {
+    padding: 20px 24px !important;
+    font-size: clamp(13px, 1.6vw, 15px) !important;
+    line-height: 1.7 !important;
+}
+
+.terminal-output {
+    font-size: 12px !important;
+    margin-top: 6px !important;
+}
+
+/* 4. Body Sections */
+.section-label {
+    font-size: 13px !important;
+    letter-spacing: 0.12em !important;
+    font-weight: 700 !important;
+}
+
+.about-text {
+    font-size: clamp(17px, 1.8vw, 19px) !important;
+    line-height: 1.7 !important;
+    color: #334155 !important;
+}
+
+.about-facts li {
+    font-size: 15px !important;
+    padding: 8px 18px !important;
+}
+
+.category-name {
+    font-size: 16px !important;
+    font-weight: 600 !important;
+}
+
+.faq-question {
+    font-size: 18px !important;
+}
+
+.faq-answer-inner {
+    font-size: 16px !important;
+    line-height: 1.65 !important;
+}
+
+/* 5. Dark Footer Typography */
+.footer__label {
+    font-size: 16px !important;
+    color: #a1a1aa !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.04em !important;
+    margin-bottom: 6px !important;
+}
+
+.footer__menu-links {
+    grid-template-columns: repeat(2, max-content) !important;
+    gap: 14px 48px !important;
+}
+
+.footer__menu-links a {
+    font-size: 16px !important;
+    color: #d4d4d8 !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.01em !important;
+}
+
+.footer__menu-links a:hover {
+    color: #ffffff !important;
+    transform: translateX(4px) !important;
+}
+
+.footer__menu-links--col span {
+    font-size: 16px !important;
+    color: #d4d4d8 !important;
+    line-height: 1.6 !important;
+}
+
+.footer__copy {
+    font-size: 15px !important;
+    color: #a1a1aa !important;
+    line-height: 1.6 !important;
+}
+
+.footer__social-pill {
+    font-size: 15px !important;
+    padding: 8px 18px !important;
+    font-weight: 600 !important;
+}
+
+.footer__social-btn {
+    width: 38px !important;
+    height: 38px !important;
+}
+
+.footer__link {
+    font-size: 18px !important;
+}
