@@ -128,17 +128,17 @@ function initNavbar() {
         var currentScroll = window.scrollY;
 
         if (currentScroll < 80) {
-            navbar.style.transform = "translateX(-50%";
+            navbar.style.transform = "translateX(-50%)";
             navbar.style.opacity = "1";
             lastScroll = currentScroll;
             return;
         }
 
         if (currentScroll > lastScroll) {
-            navbar.style.transform = "translate(-50%, -120%";
+            navbar.style.transform = "translate(-50%, -120%)";
             navbar.style.opacity = "0";
         } else {
-            navbar.style.transform = "translateX(-50%";
+            navbar.style.transform = "translateX(-50%)";
             navbar.style.opacity = "1";
         }
 
@@ -811,6 +811,49 @@ function initBottomMenuHandlers() {
                         target.scrollIntoView({ behavior: "smooth", block: "start" });
                     }
                 }
+            }
+        });
+    });
+}
+
+
+/* =====================================================
+   UNIVERSAL BULLETPROOF SMOOTH SCROLL HANDLER
+===================================================== */
+document.addEventListener("DOMContentLoaded", function () {
+    initRobustNavigation();
+});
+
+function initRobustNavigation() {
+    function scrollToId(targetId) {
+        if (!targetId || targetId === "#" || targetId === "#top" || targetId === "top") {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+            return;
+        }
+
+        var el = document.querySelector(targetId);
+        if (el) {
+            var top = el.getBoundingClientRect().top + window.pageYOffset - 60;
+            window.scrollTo({ top: top, behavior: "smooth" });
+        }
+    }
+
+    // Handle Menu button in footer
+    var menuBtn = document.getElementById("footerMenuTitleBtn");
+    if (menuBtn) {
+        menuBtn.addEventListener("click", function () {
+            scrollToId("#top");
+        });
+    }
+
+    // Handle all anchor links across page and footer
+    var allAnchors = document.querySelectorAll('a[href^="#"]');
+    allAnchors.forEach(function (anchor) {
+        anchor.addEventListener("click", function (e) {
+            var href = anchor.getAttribute("href");
+            if (href && href.startsWith("#")) {
+                e.preventDefault();
+                scrollToId(href);
             }
         });
     });

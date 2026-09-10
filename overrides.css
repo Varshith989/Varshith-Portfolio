@@ -2112,3 +2112,63 @@ body:hover .ambient-glow-follower {
 .footer__link {
     font-size: 18px !important;
 }
+
+
+/* =====================================================
+   INTERACTIVE FOOTER MENU BUTTON & NAVIGATION
+===================================================== */
+
+.footer__menu-title-btn {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin-bottom: 12px !important;
+    font-family: inherit !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: #cbd5e1 !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    text-transform: none !important;
+    letter-spacing: 0.04em !important;
+    transition: color 0.2s ease, transform 0.2s ease !important;
+    user-select: none !important;
+}
+
+.footer__menu-title-btn:hover {
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+}
+
+.footer__menu-title-btn svg {
+    transition: transform 0.2s ease;
+}
+
+.footer__menu-title-btn:hover svg {
+    transform: translateY(-2px);
+}
+
+.footer__menu-links {
+    display: grid !important;
+    grid-template-columns: repeat(2, max-content) !important;
+    gap: 14px 44px !important;
+}
+
+.footer__menu-links a {
+    font-size: 16px !important;
+    color: #d4d4d8 !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    transition: color 0.2s ease, transform 0.2s ease !important;
+    pointer-events: auto !important;
+}
+
+.footer__menu-links a:hover {
+    color: #ffffff !important;
+    transform: translateX(4px) !important;
+}
