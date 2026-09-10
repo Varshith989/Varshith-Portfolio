@@ -159,11 +159,17 @@ function initSmoothLinks() {
             var targetId = link.getAttribute("href");
             if (!targetId || targetId === "#") { return; }
 
-            var target = document.querySelector(targetId);
-            if (!target) { return; }
-
             event.preventDefault();
-            target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+            if (targetId === "#top") {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+                return;
+            }
+
+            var target = document.querySelector(targetId);
+            if (target) {
+                target.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
         });
     });
 }

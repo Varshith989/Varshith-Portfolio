@@ -1801,3 +1801,46 @@ body:hover .ambient-glow-follower {
     font-family: 'Space Mono', monospace;
     font-size: 11px;
 }
+
+
+/* =====================================================
+   BOTTOM MENU & BUTTON FIXES
+===================================================== */
+
+.footer__menu-links {
+    grid-template-columns: repeat(2, max-content) !important;
+    gap: 10px 32px !important;
+    position: relative;
+    z-index: 10;
+}
+
+.footer__menu-links a {
+    color: #a1a1aa !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px;
+    transition: color 0.2s ease, transform 0.2s ease !important;
+    pointer-events: auto !important;
+}
+
+.footer__menu-links a:hover {
+    color: #ffffff !important;
+    transform: translateX(3px) !important;
+}
+
+.floating-cta {
+    z-index: 999 !important;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    display: flex !important;
+    gap: 8px !important;
+}
+
+.floating-btn {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+}
