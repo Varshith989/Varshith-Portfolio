@@ -2,9 +2,7 @@
 
 Personal developer portfolio of **Varshith Reddy** — a frontend & software developer from Hyderabad, India.
 
-## Live site
 
-<https://portfolio-gvc2.onrender.com/>
 
 ## Built with
 
