@@ -1,57 +1,46 @@
-# Varshith Portfolio
+﻿<div align=center>
 
-Personal developer portfolio of **Varshith Reddy** — a frontend & software developer from Hyderabad, India.
+  <img src=./portfolio-banner.png alt=Varshith Reddy - Frontend Developer width=100% />
 
+  # Varshith Reddy
 
+  **Frontend & Software Developer**
 
-## Built with
+  Crafting modern, responsive, and user-friendly web applications with pixel-perfect design.
 
-- HTML5
-- CSS3 (no frameworks)
-- Vanilla JavaScript (IntersectionObserver, rAF-throttled tilt/parallax, accessible accordion/menu)
-- [DM Sans](https://fonts.google.com/specimen/DM+Sans) + [Space Mono](https://fonts.google.com/specimen/Space+Mono)
+  <p align=center>
+    <a href=https://portfolio-gvc2.onrender.com/ target=_blank>
+      <img src=https://img.shields.io/badge/Live_Demo-portfolio--gvc2.onrender.com-00D68F?style=for-the-badge&logo=render&logoColor=white alt=Live Demo />
+    </a>
+    <a href=https://www.linkedin.com/in/varshith-reddy-b2914b23a/ target=_blank>
+      <img src=https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white alt=LinkedIn />
+    </a>
+    <a href=mailto:reddyvarshith122@gmail.com>
+      <img src=https://img.shields.io/badge/Email-Contact_Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white alt=Email />
+    </a>
+  </p>
 
-## Sections
+</div>
 
-- Hero — name, role, status, CTAs, tech chips
-- About — background, focus areas, quick facts
-- Experience — internships & job simulations
-- Projects — 4 selected projects with live/GitHub links and key features
-- Tech Stack — languages, frameworks, cloud & tools
-- Education — B.Tech + schooling
-- Connect — LinkedIn, GitHub, email, resume
-- FAQ — focused on what recruiters ask
-- Contact — call-to-action block
+---
 
-## Local development
+## 🚀 Tech Stack
 
-```bash
-# Serve the folder (any static server works:
-python3 -m http.server 8000
-# Or:
-npx serve .
-```
+- **Frontend:** HTML5, CSS3, JavaScript (ES6+), React, Tailwind CSS
+- **Design & UI:** Responsive Design, Fluid Typography, Pixel-Perfect Layouts, Ambient Effects
+- **Hosting & Deployment:** Render
 
-No build step, no dependencies, no trackers.
+---
 
-## Accessibility & performance
+## 🌐 Live Website
 
-- Semantic landmarks (`header`, `nav`, `main`, `section`, `footer`)
-- Skip-to-content link
-- `aria-expanded` / `aria-controls` on FAQ toggles and mobile menu
-- `prefers-reduced-motion` support
-- `:focus-visible` outlines
-- rAF-throttled pointer handlers, passive listeners
-- Zero page images loaded by default (the only `<img>` is the Power BI screenshot, 81 KB)
+Check out the live interactive portfolio at:  
+👉 **[https://portfolio-gvc2.onrender.com/](https://portfolio-gvc2.onrender.com/)**
 
-## SEO
+---
 
-- Title, meta description, canonical
-- Open Graph + Twitter cards (uses live `og-image.jpg`)
-- JSON-LD `Person` schema (GitHub/LinkedIn sameAs, education, skills)
-- Semantic heading hierarchy
-- `favicon.svg` VR monogram
+## 📬 Contact & Connect
 
-## License
-
-All content (resume, og-image) belongs to Varshith Reddy. Code available for reference.
+- **LinkedIn:** [Varshith Reddy](https://www.linkedin.com/in/varshith-reddy-b2914b23a/)
+- **GitHub:** [@Varshith989](https://github.com/Varshith989)
+- **Email:** [reddyvarshith122@gmail.com](mailto:reddyvarshith122@gmail.com)

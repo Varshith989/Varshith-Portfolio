@@ -1121,11 +1121,8 @@ footer {
 .floating-cta {
     position: fixed;
 
-    left: 50%;
-    bottom: 22px;
-
-    transform:
-        translateX(-50%);
+    right: 24px;
+    bottom: 24px;
 
     z-index: 999;
 

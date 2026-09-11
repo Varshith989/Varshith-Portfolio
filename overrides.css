@@ -1089,7 +1089,7 @@ section {
     overflow: visible;
     position: relative;
     padding-top: 36px;
-    padding-bottom: 20px;
+    padding-bottom: clamp(65px, 8vw, 90px);
     margin-bottom: 0;
     display: flex;
     justify-content: center;
@@ -1106,7 +1106,7 @@ section {
     width: 100%;
     max-width: 100%;
     font-family: 'Antonio', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(2.2rem, 13.8vw, 200px);
+    font-size: clamp(2.2rem, 9.3vw, 155px);
     color: #ffffffeb;
     letter-spacing: -.028em;
     text-align: center;
@@ -1852,7 +1852,11 @@ body:hover .ambient-glow-follower {
 .floating-cta {
     position: fixed !important;
     bottom: 24px !important;
-    right: 24px !important;
+    right: clamp(100px, 15vw, 240px) !important;
+    left: auto !important;
+    transform: none !important;
+    width: auto !important;
+    margin: 0 !important;
     display: flex !important;
     align-items: center !important;
     gap: 8px !important;
@@ -1860,6 +1864,13 @@ body:hover .ambient-glow-follower {
     opacity: 1 !important;
     pointer-events: auto !important;
     visibility: visible !important;
+}
+
+@media (max-width: 768px) {
+    .floating-cta {
+        right: 16px !important;
+        bottom: 16px !important;
+    }
 }
 
 .floating-btn {
