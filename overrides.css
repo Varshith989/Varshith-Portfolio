@@ -1859,29 +1859,15 @@ body:hover .ambient-glow-follower {
 
 @media (max-width: 768px) {
     .floating-cta {
-        right: 8px !important;
-        bottom: 12px !important;
-        gap: 4px !important;
-        padding: 4px !important;
+        right: 16px !important;
+        bottom: calc(clamp(1.6rem, 9.8vw, 48px) + 20px) !important;
+        gap: 6px !important;
+        padding: 5px !important;
     }
 
     .floating-btn {
-        padding: 8px 12px !important;
-        font-size: 12px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .floating-cta {
-        right: 6px !important;
-        bottom: 10px !important;
-        gap: 3px !important;
-        padding: 3px !important;
-    }
-
-    .floating-btn {
-        padding: 7px 10px !important;
-        font-size: 11px !important;
+        padding: 9px 15px !important;
+        font-size: 13px !important;
     }
 }
 
