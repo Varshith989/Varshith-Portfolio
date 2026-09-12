@@ -802,9 +802,9 @@ section {
 ===================================================== */
 
 .footer {
-    --footer-content-max: 1440px;
-    --footer-inline-padding: clamp(32px, 6vw, 120px);
-    --footer-wordmark-width: min(calc(100vw - (var(--footer-inline-padding) * 2)), calc(var(--footer-content-max) - (var(--footer-inline-padding) * 2)));
+    --footer-content-max: 1600px;
+    --footer-inline-padding: clamp(24px, 4.5vw, 80px);
+    --footer-wordmark-width: 100%;
     color: #fff;
     text-align: left;
     background: #0a0a0a !important;
@@ -1088,12 +1088,12 @@ section {
     width: 100%;
     overflow: visible;
     position: relative;
-    padding-top: 36px;
-    padding-bottom: clamp(65px, 8vw, 90px);
-    margin-bottom: 0;
+    padding-top: 24px;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     user-select: none;
     -webkit-user-select: none;
     pointer-events: none;
@@ -1106,15 +1106,16 @@ section {
     width: 100%;
     max-width: 100%;
     font-family: 'Antonio', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(2.2rem, 9.3vw, 155px);
+    font-size: clamp(2.4rem, 10.5vw, 160px);
     color: #ffffffeb;
-    letter-spacing: -.028em;
+    letter-spacing: -.02em;
     text-align: center;
     white-space: nowrap;
     font-weight: 700;
-    line-height: 0.95;
+    line-height: 1;
     margin: 0 auto;
-    padding: 0 clamp(16px, 3vw, 48px);
+    padding: 0 clamp(16px, 3vw, 40px);
+    margin-bottom: 0;
     transform: translateY(0);
     transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -1170,7 +1171,8 @@ section {
     .footer__wordmark {
         font-size: clamp(1.8rem, 12.8vw, 64px);
         padding: 0 12px;
-        line-height: 1;
+        line-height: 0.85;
+        margin-bottom: -0.04em;
     }
 }
 
@@ -1731,18 +1733,7 @@ body:hover .ambient-glow-follower {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
 }
 
-/* 3. Interactive Footer Wordmark Letter Glow & Scale */
-.footer__wordmark span {
-    display: inline-block;
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease, text-shadow 0.25s ease;
-    cursor: default;
-}
 
-.footer__wordmark span:hover {
-    transform: translateY(-12px) scale(1.1);
-    color: #ffffff;
-    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(56, 189, 248, 0.4);
-}
 
 /* 4. Click Particle Sparkle Elements */
 .click-sparkle {
@@ -1852,9 +1843,8 @@ body:hover .ambient-glow-follower {
 .floating-cta {
     position: fixed !important;
     bottom: 24px !important;
-    right: clamp(100px, 15vw, 240px) !important;
+    right: clamp(20px, 2.5vw, 36px) !important;
     left: auto !important;
-    transform: none !important;
     width: auto !important;
     margin: 0 !important;
     display: flex !important;
@@ -1864,6 +1854,7 @@ body:hover .ambient-glow-follower {
     opacity: 1 !important;
     pointer-events: auto !important;
     visibility: visible !important;
+    transition: transform 0.2s ease, bottom 0.2s ease, right 0.2s ease !important;
 }
 
 @media (max-width: 768px) {

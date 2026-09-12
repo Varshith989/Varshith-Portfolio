@@ -445,25 +445,9 @@ function initFooterCanvas() {
 }
 
 function initFooterFloatingCta() {
-    var footer = document.querySelector(".footer");
     var cta = document.querySelector(".floating-cta");
-    if (!footer || !cta) return;
-
-    var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                cta.style.opacity = "0";
-                cta.style.pointerEvents = "none";
-                cta.style.transform = "translateY(20px)";
-            } else {
-                cta.style.opacity = "1";
-                cta.style.pointerEvents = "auto";
-                cta.style.transform = "translateY(0)";
-            }
-        });
-    }, { threshold: 0.15 });
-
-    observer.observe(footer);
+    if (!cta) return;
+    cta.style.removeProperty("transform");
 }
 
 
