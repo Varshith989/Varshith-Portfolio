@@ -1169,10 +1169,10 @@ section {
         gap: 24px;
     }
     .footer__wordmark {
-        font-size: clamp(1.8rem, 12.8vw, 64px);
-        padding: 0 12px;
-        line-height: 0.85;
-        margin-bottom: -0.04em;
+        font-size: clamp(1.6rem, 9.8vw, 48px);
+        padding: 0 10px;
+        line-height: 1;
+        margin-bottom: 0;
     }
 }
 
@@ -1859,8 +1859,29 @@ body:hover .ambient-glow-follower {
 
 @media (max-width: 768px) {
     .floating-cta {
-        right: 16px !important;
-        bottom: 16px !important;
+        right: 8px !important;
+        bottom: 12px !important;
+        gap: 4px !important;
+        padding: 4px !important;
+    }
+
+    .floating-btn {
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-cta {
+        right: 6px !important;
+        bottom: 10px !important;
+        gap: 3px !important;
+        padding: 3px !important;
+    }
+
+    .floating-btn {
+        padding: 7px 10px !important;
+        font-size: 11px !important;
     }
 }
 
